@@ -14,8 +14,7 @@ if __name__ == '__main__':
 # Переменные
 fragment = [ ["DA5",288], ["1033",40]]	# фрагменты (адрес, длина)
 table = []; 		# таблица
-sep_1=" "		# разделитель после номера клавиши
-sep_2=" "		# разделитель между кодами
+sep=" "		# разделитель
 line_end = "\r\n"	# конец строки
 
 # Чтение исходного файла
@@ -41,19 +40,19 @@ for i in range (48):
 	i_hex = "0"+i_hex
     i_hex = i_hex.upper()
     i_hex = "0x"+i_hex
-    data_out = data_out + i_hex + sep_1
+    data_out = data_out + i_hex + sep
     for t in [0,1,2,3,4,5]:
 	n = i+(t*48)
 	if t == 5:
 	    data_out = data_out + table[n] + line_end
 	else:
-		data_out = data_out + table[n] + sep_2
+		data_out = data_out + table[n] + sep
 # Таблица 2
 for i in range (40):
     i_hex = '{0:x}'.format(int(i+48))
     i_hex = i_hex.upper()
     i_hex = "0x"+i_hex
-    data_out = data_out + i_hex + sep_1
+    data_out = data_out + i_hex + sep
     data_out = data_out + table[int(288+i)] + line_end
 # Запись в файл
 file_out = open(file_o, 'wb')
