@@ -8,7 +8,7 @@ if __name__ == '__main__':
 	file_o = sys.argv[2]		# имя файл (без расширения)
     else:
         print ('Не заданы параметры!')
-	print ('Пример: ' + sys.argv[0] + ' table.txt file')
+	print ('Пример: ' + sys.argv[0] + ' table.txt table')
 	sys.exit (1)
 # Переменные
 fragment = [ ['0DA5',288], ['1033',40]]	# фрагменты (адрес, длина)
