@@ -66,7 +66,8 @@ file_in = open(file_i)
 data_out = ''
 table1 = [];
 for i in range ((fragment [0] [1])+1):table1.append(0);
-table2 = [0];
+table2 = [];
+for i in range ((fragment [1] [1])+1):table2.append(0);
 basic_l = ''
 n=0
 for line in file_in.readlines():
@@ -96,7 +97,7 @@ for line in file_in.readlines():
 	# Таблица, часть 2
 	l0 = str('0x' + l0)
 	l1 = str(int(l[1],16)) # Код символа в режиме 1
-	table2.insert(n-48,l[1])
+	table2[n-48] = l[1]
 	name = hex_to_symbol(l[1].lower()) # Код символа в режиме 1
 	if l0_dec < 68:
 	    # Колонка 1
