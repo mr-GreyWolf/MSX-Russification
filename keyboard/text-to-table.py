@@ -120,6 +120,7 @@ file_out = open(file_o + ext_file_basic, 'wb')
 file_out.write(data_out)
 file_out.close()
 # Вывод содержимого таблиц
+print 'Для изменения исходного файла используйте команды:'
 for f in [0,1]:
     offset = fragment [f] [0]
     length = fragment [f] [1]
@@ -131,7 +132,7 @@ for f in [0,1]:
 	data_out = data_out + code_bin
     # Запись в файл
     file_out_name = file_o + '_' + offset + '-' + str(length) + ext_file_bin
-    print 'файл: ' + file_out_name
+    print '../tools/fragment-to-binary-file.py ' + file_out_name + ' ' + str(offset) + ' ' + str(length)
     file_out = open(file_out_name, 'wb')
     file_out.write(data_out)
     file_out.close()
