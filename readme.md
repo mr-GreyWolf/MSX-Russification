@@ -1,4 +1,5 @@
-# Русификация MSX 
+# Русификация MSX
+https://sysadminmosaic.ru/msx/russification
 
 ### converter
 Конвертер текста MSX в кодировку UTF-8.
@@ -8,6 +9,3 @@
 
 ### tools
 Инструменты для работы с бинарными файлами.
-
-### Документация
-https://sysadminmosaic.ru/msx/russification
