@@ -101,10 +101,10 @@ for line in file_in.readlines():
 	name = hex_to_symbol(l[1].lower()) # Код символа в режиме 1
 	if l0_dec < 68:
 	    # Колонка 1
-	    basic_l = (str(l0_dec + 10) + ' locate 0,'+ str(l0_dec - 48) + ': ? "' + l0 + ' = ' + name)
+	    basic_l = (str(l0_dec + 10) + ' locate 0,'+ str(l0_dec - 48) + ': ? "' + l0 + ' ' + name)
 	else:
 	    # Колонка 2
-	    basic_l = (str(l0_dec + 10) + ' locate 17,'+ str(l0_dec - 68) + ': ? "' + l0 + ' = ' + name)
+	    basic_l = (str(l0_dec + 10) + ' locate 17,'+ str(l0_dec - 68) + ': ? "' + l0 + ' ' + name)
     # Формирование программы
     data_out = data_out + basic_l + ';' + basic_line_end
 # Дополнительные строки программы
