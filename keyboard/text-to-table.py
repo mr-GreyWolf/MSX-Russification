@@ -109,7 +109,7 @@ for line in file_in.readlines():
     data_out = data_out + basic_l + ';' + basic_line_end
 # Дополнительные строки программы
 data_out = data_out + \
-    '0 screen 1:key off:width 32' + basic_line_end + \
+    '0 color 1,15,15:screen 1:key off:width 32' + basic_line_end + \
     '50 if inkey$="" then 50' + basic_line_end + \
     '51 cls:locate 0,0:print' + basic_line_end + \
     '100 if inkey$="" then 100' + basic_line_end + \
