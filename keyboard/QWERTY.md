@@ -1,5 +1,6 @@
 
-### QWERTY.txt
+### [QWERTY.txt](QWERTY.txt)
+
 Исправленная латиница с JCUKEN на QWERTY. Изменения сделаны для использования с текущей версией WebMSX.
 
 ![Таблица, часть 1](QWERTY_1.png)
