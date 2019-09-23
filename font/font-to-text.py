@@ -18,6 +18,8 @@ table = []; 		# таблица
 line_end = "\r\n"	# конец строки
 replace_0 = '.' # замена для 0
 replace_1 = '@' # замена для 1
+offset_text = 'Смещение'
+code_text =   'Код'
 
 # Чтение исходного файла
 file_in = open(file_i, 'rb')
@@ -43,8 +45,9 @@ for i in range (0,2047,8):
 	i_hex = '0x0' + i_hex
     else:
 	i_hex = '0x' + i_hex
-    data_out =  data_out + 'Смещение: '+ '0x' + str(s_hex)+ ' ('  + str (s*8)+ ')   Код: ' + i_hex + ' (' + str(s) + ')' + line_end + \
+    data_out =  data_out + offset_text + ': ' + '0x' + str(s_hex)+ ' ('  + str (s*8)+ ')   ' + code_text + ': ' + i_hex + ' (' + str(s) + ')' + line_end + \
     '_12345678' + line_end
+
     for t in range (0,8):
 	string_of_pixels=((bin(int(table[i+t], 16))[2:].zfill(8)).replace('0', replace_0)).replace('1', replace_1)
 	data_out = data_out + str (t+1) + string_of_pixels + line_end
