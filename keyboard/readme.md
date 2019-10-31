@@ -50,8 +50,8 @@
 - `table_1033-40.bin`  — файл с второй частью таблицей
 
 Для изменения исходного файла используйте команды:
-- `../tools/fragment-to-binary-file.py table_0DA5-288.bin 0DA5 288`
-- `../tools/fragment-to-binary-file.py table_1033-40.bin 1033 40`
+- `../tools/fragment-to-binary-file.py file.bin table_0DA5-288.bin 0DA5 288`
+- `../tools/fragment-to-binary-file.py file.bin table_1033-40.bin 1033 40`
 
 ### [USSR.txt](USSR.md)
 Оригнальная таблица компьютеров стандарта MSX 2 которые поставлялись в СССР.
