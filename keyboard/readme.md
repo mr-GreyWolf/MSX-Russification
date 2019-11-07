@@ -75,8 +75,8 @@
 
 Рекомендована для использования на "железных" компьютерах.
 
-### ![QWERTY.txt](QWERTY.md)
+### [QWERTY.txt](QWERTY.md)
 Исправленная латиница с JCUKEN на QWERTY. Изменения сделаны для использования с текущей версией [WebMSX](https://github.com/ppeccin/WebMSX).
 
-### International.txt
+### [International.txt](International.md)
 Оригинальная интернациональная таблица.
