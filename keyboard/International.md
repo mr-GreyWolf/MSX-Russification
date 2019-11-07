@@ -1,5 +1,5 @@
 
-### International.txt
+### [International.txt](International.txt)
 
 ![Таблица, часть 1](International_1.png)
 
