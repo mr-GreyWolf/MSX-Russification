@@ -1,5 +1,7 @@
 # [Русификация MSX](https://sysadminmosaic.ru/msx/russification)
 
+Для написания скриптов использовался Python 2.7
+
 ### [converter](https://github.com/mr-GreyWolf/MSX-Russification/tree/master/converter)
 Конвертер текста MSX в кодировку UTF-8.
 
