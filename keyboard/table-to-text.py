@@ -6,13 +6,17 @@ if __name__ == '__main__':
     if len (sys.argv) == 3:
 	file_i = sys.argv[1]		# исходный файл
 	file_o = sys.argv[2]		# файл с таблицей
+	fragment = [ ["DA5",288], ["1033",40] ]	# фрагменты (адрес, длина) для MSX 1 и 2
+    elif len (sys.argv) == 4 and sys.argv[3] == '2+':
+        file_i = sys.argv[1]		# исходный файл
+        file_o = sys.argv[2]		# файл с таблицей
+        fragment = [ ["DA5",288], ["0FF8",40] ]	# фрагменты (адрес, длина) для MSX 2+
     else:
         print ('Не заданы параметры!')
-	print ('Пример: ' + sys.argv[0] + ' file.bin table.txt')
+	print ('Пример: ' + sys.argv[0] + ' file.bin table.txt' + ' [2+]')
 	sys.exit (1)
 
 # Переменные
-fragment = [ ["DA5",288], ["1033",40]]	# фрагменты (адрес, длина)
 table = []; 		# таблица
 sep=" "			# разделитель
 line_end = "\r\n"	# конец строки
