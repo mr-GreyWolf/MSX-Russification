@@ -1,9 +1,12 @@
 # Инструменты для работы с шрифтом
 
-Чтение файла BIOS и сохранение фрагмента с шрифтом в отдельный файл:
+Для работы с шрифтом нужно использовать слежующую схему:
+1. Чтение шрифта из файла BIOS при помощи скрипта [font-to-text.py](#fonttotext)
+2. Имзменеия шрифта в текстовом файле
+3. Сохрание шрифта в бинарный файл [text-to-font.py](#texttofont)
+4. [Изменение исходного файла BIOS](#fonttobios)
 
-`../tools/fragment-from-binary-file.py file.bin font.bin 1BBF 2048`
-
+<a name="fonttotext"></a>
 ### font-to-text.py
 Чтение файла BIOS и сохранение шрифта в текстовый файл.
 
@@ -49,6 +52,7 @@ _12345678
 8........
 
 ```
+<a name="texttofont"></a>
 ### text-to-font.py
 Чтение шрифта из текстового файла и вывод в бинарный формат.
 
@@ -59,5 +63,12 @@ _12345678
 Пример запуска:
 `./text-to-font.py font.txt font`
 
+<a name="fonttobios"></a>
+### Изменение исходного файла BIOS
 Для изменения исходного файла BIOS используйте команду:
 `../tools/fragment-to-binary-file.py file.bin file_1BBF-2048.bin 1BBF 2048`
+
+### Дополнительно
+Чтение файла BIOS и сохранение фрагмента с шрифтом в отдельный файл:
+
+`../tools/fragment-from-binary-file.py file.bin font.bin 1BBF 2048`
