@@ -35,10 +35,11 @@ _12345678
 7........
 8........
 
-
-
-
-
-
-
 ```
+### text-to-font.py
+Чтение шрифта из текстового файла и вывод в бинарный формат.
+
+`./text-to-font.py font.txt font`
+
+Для изменения исходного файла BIOS используйте команду:
+`../tools/fragment-to-binary-file.py file.bin file_1BBF-2048.bin 1BBF 2048`
