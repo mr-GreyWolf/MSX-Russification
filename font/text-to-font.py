@@ -41,5 +41,5 @@ file_out = open(file_out_name , 'wb')
 file_out.write(data_out)
 file_out.close()
 
-print 'Для изменения исходного файла используйте команды:'
+print 'Для изменения исходного файла используйте команду:'
 print '../tools/fragment-to-binary-file.py file.bin ' + file_out_name + ' ' + str(offset) + ' ' + str(length)
