@@ -3,17 +3,17 @@
 import binascii
 import sys
 
-if __name__ == '__main__':
-    if len (sys.argv) == 3:
-	file_msx = sys.argv[1]     # исходный файл (MSX)
-	file_utf = sys.argv[2]     # конечный файл (UTF-8)
+if __name__=='__main__':
+    if len (sys.argv)==3:
+	file_msx=sys.argv[1]     # исходный файл (MSX)
+	file_utf=sys.argv[2]     # конечный файл (UTF-8)
     else:
         print ('Не заданы файлы!')
-	print ('Пример: ./msx_russian-utf8.py test.msx test.txt')
+	print ('Пример: '+sys.argv[0]+' test.msx test.txt')
 	sys.exit (1)
 
 def hex_to_utf (hex):
-    msx_to_utf = {
+    msx_to_utf={
 	'80':'e29681',		# 80 Нижняя одна восьмая блока U+2581
 	'81':'e2969a',		# 81 Квадрант сверху слева и снизу справа U+259A
 	'82':'e29687',		# 82 Нижние семь восьмых блока U+2587
@@ -174,35 +174,35 @@ def hex_to_utf (hex):
 	'015f':''		# 15F
     }
     if hex in msx_to_utf:
-	utf = (msx_to_utf[hex])
+	utf=(msx_to_utf[hex])
     else:
 	utf='' # обработка отсутствия значения в словаре
     return utf
 
-data_out = ''
-file_in = open(file_msx, 'rb')
-data_in = file_in.read(1)
-prefix = 0
+data_out=''
+file_in=open(file_msx,'rb')
+data_in=file_in.read(1)
+prefix=0
 
 while data_in:
-    code_dec = ord(data_in)
-    code_hex = binascii.b2a_hex(data_in)
-    data_in = file_in.read(1)
-    code_bin = binascii.unhexlify(code_hex)
+    code_dec=ord(data_in)
+    code_hex=binascii.b2a_hex(data_in)
+    data_in=file_in.read(1)
+    code_bin=binascii.unhexlify(code_hex)
 
-    if code_dec == 1 :
-	prefix = 1
-    elif prefix == 1 and  code_dec<128 :
-	data_out=data_out + binascii.unhexlify(hex_to_utf('01'+code_hex))
+    if code_dec==1 :
+	prefix=1
+    elif prefix==1 and  code_dec<128 :
+	data_out=data_out+binascii.unhexlify(hex_to_utf('01'+code_hex))
 	prefix=0
-    elif code_dec == 26 :
+    elif code_dec==26 :
 	pass # A1 EOF (Конец файла)
-    elif code_dec < 128 :
-	data_out = data_out + code_bin
-    elif code_dec >= 128 :
-	data_out = data_out + binascii.unhexlify(hex_to_utf(code_hex))
+    elif code_dec<128 :
+	data_out=data_out+code_bin
+    elif code_dec>=128 :
+	data_out=data_out+binascii.unhexlify(hex_to_utf(code_hex))
 
-file_out = open(file_utf, 'wb')
+file_out=open(file_utf,'wb')
 file_out.write(data_out)
 
 file_out.close()
