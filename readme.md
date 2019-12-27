@@ -2,14 +2,14 @@
 
 Для написания скриптов использовался Python 2.7
 
-### [converter](https://github.com/mr-GreyWolf/MSX-Russification/tree/master/converter)
+### [converter](converter)
 Конвертер текста MSX в кодировку UTF-8.
 
-### [keyboard](https://github.com/mr-GreyWolf/MSX-Russification/tree/master/keyboard)
+### [keyboard](keyboard)
 Инструменты для работы с талицей матрицы клавиатуры.
 
-### [font](https://github.com/mr-GreyWolf/MSX-Russification/tree/master/font)
+### [font](font)
 Инструменты для работы с шрифтом
 
-### [tools](https://github.com/mr-GreyWolf/MSX-Russification/tree/master/tools)
+### [tools](tools)
 Инструменты для работы с бинарными файлами.
