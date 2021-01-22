@@ -186,7 +186,7 @@ prefix=0
 
 while data_in:
 	code_dec=ord(data_in)
-	code_hex=(binascii.b2a_hex(data_in)).decode("ascii")
+	code_hex=(binascii.b2a_hex(data_in)).decode('ascii')
 	data_in=file_in.read(1)
 	code_bin=binascii.unhexlify(code_hex)
 
