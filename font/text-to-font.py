@@ -20,7 +20,7 @@ ext_file_bin='.bin' # расширение бинарного файла
 
 # Чтение исходного файла
 file_in=open(file_i,'r')
-data_out=''
+data_out=b''
 
 for data_in in file_in:
 	line_str=data_in.strip()
@@ -41,5 +41,5 @@ file_out=open(file_out_name,'wb')
 file_out.write(data_out)
 file_out.close()
 
-print 'Для изменения исходного файла используйте команду:'
-print '../tools/fragment-to-binary-file.py file.bin ' + file_out_name + ' ' + str(offset) + ' ' + str(length)
+print ('Для изменения исходного файла используйте команду:')
+print ('../tools/fragment-to-binary-file.py file.bin ' + file_out_name + ' ' + str(offset) + ' ' + str(length))

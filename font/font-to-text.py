@@ -23,7 +23,7 @@ code_text='Код'
 
 # Чтение исходного файла
 file_in=open(file_i,'rb')
-data_out=''
+data_out=b''
 
 file_in.seek(int(offset,base=16))
 data_in=file_in.read(1)
@@ -45,12 +45,17 @@ for i in range(0,2047,8):
 		i_hex='0x0'+i_hex
 	else:
 		i_hex='0x'+i_hex
-	data_out=data_out+offset_text+': '+'0x'+str(s_hex)+' ('+str (s*8)+ ')   '+code_text+': '+i_hex+' ('+str(s)+')'+line_end+'_12345678'+line_end
+	if sys.version_info[0] < 3:
+		 # Python 2
+		data_out=data_out+offset_text+': '+'0x'+str(s_hex)+' ('+str (s*8)+ ')   '+code_text+': '+i_hex+' ('+str(s)+')'+line_end+'_12345678'+line_end
+	else:
+		# Python 3
+		data_out=data_out+(offset_text+': '+'0x'+str(s_hex)+' ('+str (s*8)+ ')   '+code_text+': '+i_hex+' ('+str(s)+')'+line_end+'_12345678'+line_end).encode()
 
 	for t in range (0,8):
 		string_of_pixels=((bin(int(table[i+t],16))[2:].zfill(8)).replace('0',replace_0)).replace('1',replace_1)
-		data_out=data_out+str(t+1)+string_of_pixels+line_end
-	data_out=data_out+line_end
+		data_out=data_out+(str(t+1)+string_of_pixels+line_end).encode()
+	data_out=data_out+line_end.encode()
 	s=s+1
 # Запись в файл
 file_out=open(file_o,'wb')
