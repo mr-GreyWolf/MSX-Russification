@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # coding=utf8
 import binascii,sys
 
@@ -16,13 +16,13 @@ if __name__=='__main__':
 new_file_prefix='_new'
 offset=int(offset,base=16)-1
 i=0
-data_out_new=''
+data_out_new=b''
 file_in=open(file_i, 'rb')
 file_out=open(file_o, 'rb')
 
 data_out=file_out.read(1)
 while data_out:
-	if i>offset and i<(offset+length) :
+	if i>offset and i<(offset+length):
 		data_in=file_in.read(1)
 		data_out_new=data_out_new+data_in
 		data_out=file_out.read(1)

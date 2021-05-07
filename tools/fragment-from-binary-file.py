@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # coding=utf8
 import binascii,sys
 
@@ -15,8 +15,8 @@ if __name__=='__main__':
 
 file_in=open(file_i,'rb')
 file_in.seek(int(offset,base=16)-1)
-data_in=file_in.read(1)
-data_out=''
+data_in=file_in.read(1).decode('ascii')
+data_out=b''
 
 while length:
 	data_out=data_out+file_in.read(1)
