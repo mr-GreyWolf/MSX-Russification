@@ -25,14 +25,15 @@ line_end="\r\n"	# конец строки
 
 # Чтение исходного файла
 file_in=open(file_i,'rb')
-data_out=''
+data_out=b''
 for f in [0,1]:
 	offset=fragment[f][0]
 	length=fragment[f][1]
 	file_in.seek(int(offset,base=16))
 	data_in = file_in.read(1)
 	while length:
-		code_hex=binascii.b2a_hex(data_in)
+#		code_hex=binascii.b2a_hex(data_in)
+		code_hex=binascii.b2a_hex(data_in).decode('ascii')
 		code_hex=code_hex.upper()
 		table.append(code_hex);
 		length=length-1
@@ -46,20 +47,21 @@ for i in range (48):
 		i_hex="0"+i_hex
 	i_hex=i_hex.upper()
 	i_hex="0x"+i_hex
-	data_out=data_out+i_hex+sep
+#	data_out=data_out+i_hex+sep
+	data_out=data_out+(i_hex+sep).encode()
 	for t in [0,1,2,3,4,5]:
 		n=i+(t*48)
 		if t==5:
-			data_out=data_out+table[n]+line_end
+			data_out=data_out+(table[n]+line_end).encode()
 		else:
-			data_out=data_out+table[n]+sep
+			data_out=data_out+(table[n]+sep).encode()
 # Таблица 2
 for i in range (40):
 	i_hex='{0:x}'.format(int(i+48))
 	i_hex=i_hex.upper()
 	i_hex="0x"+i_hex
-	data_out=data_out+i_hex+sep
-	data_out=data_out+table[int(288+i)]+line_end
+	data_out=data_out+(i_hex+sep).encode()
+	data_out=data_out+(table[int(288+i)]+line_end).encode()
 # Запись в файл
 file_out=open(file_o,'wb')
 file_out.write(data_out)

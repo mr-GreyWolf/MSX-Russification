@@ -41,7 +41,7 @@ def hex_to_symbol(hex):
 	return hex_to_symbol
 # Чтение текстового файла
 file_in=open(file_i)
-data_out=''
+data_out=b''
 table1=[];
 for i in range ((fragment [0] [1])+1):table1.append(0);
 table2=[];
@@ -84,25 +84,27 @@ for line in file_in.readlines():
 			# Колонка 2
 			basic_l=(str(l0_dec+10)+' locate 17,'+str(l0_dec-68)+': ? "'+l0+' '+ name)
 	# Формирование программы
-	data_out=data_out+basic_l+';'+basic_line_end
+	data_out=data_out+(basic_l+';'+basic_line_end).encode()
 # Дополнительные строки программы
-data_out=data_out+ \
+data_out=data_out+( \
 	'0 color 1,15,15:screen 1:key off:width 32'+basic_line_end+ \
 	'50 if inkey$="" then 50'+basic_line_end+ \
 	'51 cls:locate 0,0:print'+basic_line_end+ \
 	'100 if inkey$="" then 100'+basic_line_end+ \
 	'101 goto 0'+basic_line_end+ \
-	'\x1A'
+	'\x1A' \
+	).encode()
+
 # Запись программы в файл
 file_out=open(file_o+ext_file_basic,'wb')
 file_out.write(data_out)
 file_out.close()
 # Вывод содержимого таблиц
-print 'Для изменения исходного файла используйте команду:'
+print ('Для изменения исходного файла используйте команду:')
 for f in [0,1]:
 	offset=fragment[f][0]
 	length=fragment[f][1]
-	data_out=''
+	data_out=b''
 	for n in range(1,length+1):
 		var_name='table'+str(f+1)
 		code_hex=globals()[var_name][n]
@@ -110,7 +112,7 @@ for f in [0,1]:
 		data_out=data_out+code_bin
 	# Запись в файл
 	file_out_name=file_o+'_'+offset+'-'+str(length)+ext_file_bin
-	print '../tools/fragment-to-binary-file.py file.bin '+file_out_name+' '+str(offset)+' '+str(length)
+	print ('../tools/fragment-to-binary-file.py file.bin '+file_out_name+' '+str(offset)+' '+str(length))
 	file_out=open(file_out_name,'wb')
 	file_out.write(data_out)
 	file_out.close()
