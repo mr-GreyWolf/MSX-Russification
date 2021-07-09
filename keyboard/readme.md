@@ -86,3 +86,6 @@
 
 ### [International.txt](International.md)
 Оригинальная интернациональная таблица.
+
+### [openMSX.txt](openMSX.md)
+Изменения сделаны для использования с текущей версией [openMSX](https://github.com/openMSX).
