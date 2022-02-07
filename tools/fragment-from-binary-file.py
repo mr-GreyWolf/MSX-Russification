@@ -14,8 +14,11 @@ if __name__=='__main__':
 		sys.exit(1)
 
 file_in=open(file_i,'rb')
-file_in.seek(int(offset,base=16)-1)
-data_in=file_in.read(1).decode('ascii')
+offset = (int(offset,base=16)-1)
+if offset < 0:
+	offset = 0
+
+file_in.seek(int(offset))
 data_out=b''
 
 while length:
