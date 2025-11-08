@@ -84,8 +84,13 @@
 ### [QWERTY.txt](QWERTY.md)
 Исправленная латиница с JCUKEN на QWERTY. Изменения сделаны для использования с текущей версией [WebMSX](https://github.com/ppeccin/WebMSX).
 
+### [Omega](Omega.md)
+Исправленная латиница с JCUKEN на QWERTY. Изменения сделаны для использования с текущей версией [Omega](https://github.com/skiselev/omega).
+
 ### [International.txt](International.md)
 Оригинальная интернациональная таблица.
 
 ### [openMSX.txt](openMSX.md)
 Изменения сделаны для использования с текущей версией [openMSX](https://github.com/openMSX).
+
+
