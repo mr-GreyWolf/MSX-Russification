@@ -7,3 +7,6 @@
 ![Таблица](Omega.txt)
 
 ![Файл с таблицей матрицы клавиатуры — (смещение 0x0DA5, длина 288)](Omega.bin)
+
+
+Подробнее ![здесь](https://sysadminmosaic.ru/msx/omega/russification)
