@@ -1,4 +1,4 @@
-### [Omega-keyboard_ru.txt](keyboard/Omega-keyboard_ru.txt)
+### [Omega](Omega.txt)
 
 Исправленная латиница с JCUKEN на QWERTY. Изменения сделаны для использования ![Omega](https://github.com/skiselev/omega) с QWERTY клавиатурой.
 
